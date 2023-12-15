@@ -1,5 +1,6 @@
 package com.hamzashaikh2001.ecoexplorer;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
