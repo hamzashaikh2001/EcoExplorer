@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 public class RegionData {
 	
 	@Id
-	private String zip;
+	private String zipCode;
 	private String no2;
 	private String ozone;
 	private String pm25;
@@ -25,10 +25,10 @@ public class RegionData {
 	
 	private RegionData() {}
 	
-	public RegionData(String zip, String no2, String ozone, String pm25, String state, String type, String primaryCity,
+	public RegionData(String zipCode, String no2, String ozone, String pm25, String state, String type, String primaryCity,
 			String acceptableCities, String unacceptableCities, String county, String timezone, String areaCodes,
 			String latitude, String longitude, String estimatedPop) {
-		this.zip = zip;
+		this.zipCode = zipCode;
 		this.no2 = no2;
 		this.ozone = ozone;
 		this.pm25 = pm25;
@@ -45,11 +45,11 @@ public class RegionData {
 		this.estimatedPop = estimatedPop;
 	}
 
-	public String getZip() {
-		return zip;
+	public String getZipCode() {
+		return zipCode;
 	}
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 	public String getNo2() {
 		return no2;
