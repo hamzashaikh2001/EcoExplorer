@@ -1,26 +1,29 @@
 package com.hamzashaikh2001.ecoexplorer.service;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hamzashaikh2001.ecoexplorer.api.model.Zip;
+import com.hamzashaikh2001.ecoexplorer.api.model.RegionData;
+import com.hamzashaikh2001.ecoexplorer.api.model.WaterData;
+import com.hamzashaikh2001.ecoexplorer.api.model.ZipData;
 
 @Service
 public class ZipService {
 	
-	private final Map<String, Zip> zipList;
+	private final RegionService regionService;
+	private final WaterService waterService;
 
-	public ZipService() {
-		this.zipList = new HashMap<>();
-		zipList.put("111111", new Zip("Example1"));
-		zipList.put("222222", new Zip("Example2"));
+	@Autowired
+	public ZipService(RegionService regionService, WaterService waterService) {
+		this.regionService = regionService;
+		this.waterService = waterService;
 	}
 
-	public Optional<Zip> getZip(String zipCode) {
-		return Optional.ofNullable(zipList.get(zipCode));
-		// Get the info and then put it into a Zip object. Return the Zip object.
+	public ZipData getZipData(String zipCode) {
+		RegionData regionData = this.regionService.getRegionData(zipCode);
+		List<WaterData> waterData = this.waterService.getWaterDataByZipCode(zipCode);
+		return new ZipData(regionData, waterData);
 	}
 }
