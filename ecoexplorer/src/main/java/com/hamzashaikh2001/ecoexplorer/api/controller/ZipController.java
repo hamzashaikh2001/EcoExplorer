@@ -13,19 +13,20 @@ import com.hamzashaikh2001.ecoexplorer.service.ZipService;
 @RestController
 public class ZipController {
 
-	private ZipService zipService;
+	private final ZipService zipService;
 	
 	@Autowired
 	public ZipController(ZipService zipService) {
 		this.zipService = zipService;
 	}
 	
-	@GetMapping("/api/zip/{zipCode}")
+	@GetMapping("/api/zips/{zipCode}")
 	public Zip getZip(@PathVariable String zipCode) {
 		Optional<Zip> zip = zipService.getZip(zipCode);
 		if(zip.isPresent()) {
 			return (Zip) zip.get();
 		}
+		// Needs to call on other services for their data
 		return null;
 	}
 }

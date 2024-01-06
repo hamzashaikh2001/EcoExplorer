@@ -15,11 +15,12 @@ public class ZipService {
 
 	public ZipService() {
 		this.zipList = new HashMap<>();
-		zipList.put("11111", new Zip("Example1"));
-		zipList.put("11112", new Zip("Example2"));
+		zipList.put("111111", new Zip("Example1"));
+		zipList.put("222222", new Zip("Example2"));
 	}
 
 	public Optional<Zip> getZip(String zipCode) {
 		return Optional.ofNullable(zipList.get(zipCode));
+		// Get the info and then put it into a Zip object. Return the Zip object.
 	}
 }
