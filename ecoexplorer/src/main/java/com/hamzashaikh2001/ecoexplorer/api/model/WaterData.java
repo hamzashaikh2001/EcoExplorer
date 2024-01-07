@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 public class WaterData {
 	
 	private String zipCode;
+	private String shortenedZipCode;
 	@Id
 	private String pwsID;
 	private String pwsName;
@@ -26,6 +27,12 @@ public class WaterData {
 			String countiesServed, String citiesServed, String popServed, String numOfFacilities,
 			String numOfViolations, String numOfSiteVisits, String submissionYear) {
 		this.zipCode = zipCode;
+		if (zipCode.length() >= 5) {
+			this.shortenedZipCode = zipCode.substring(0, 5);
+		}
+		else {
+			this.shortenedZipCode = zipCode;
+		}
 		this.pwsID = pwsID;
 		this.pwsName = pwsName;
 		this.pwsType = pwsType;
@@ -44,6 +51,12 @@ public class WaterData {
 	}
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
+	}
+	public String getShortenedZipCode() {
+		return shortenedZipCode;
+	}
+	public void setShortenedZipCode(String shortenedZipCode) {
+		this.shortenedZipCode = shortenedZipCode;
 	}
 	public String getPwsID() {
 		return pwsID;

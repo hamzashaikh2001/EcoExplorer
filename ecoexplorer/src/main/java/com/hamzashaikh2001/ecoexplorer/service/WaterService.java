@@ -48,9 +48,14 @@ public class WaterService {
 	public List<WaterData> getWaterDataByZipCode(String zipCode) {
 		// Maybe return null if empty
 		// Also add http status codes to controller classes
-		// get mapping for 5 digit or 9 digit numbers.
-		// Will probably need to add another column for 5 digit search, unless we can limit to 5 digits.
-		return this.waterRepository.findByZipCode(zipCode);
+		List<WaterData> result;
+		if (zipCode.length() <= 5) {
+			result = this.waterRepository.findByShortenedZipCode(zipCode);
+		}
+		else {
+			result = this.waterRepository.findByZipCode(zipCode);
+		}
+		return result;
     }
 
 	public WaterData getWaterDataByPWSID(String pwsID) {

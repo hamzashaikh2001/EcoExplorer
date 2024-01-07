@@ -8,4 +8,5 @@ import com.hamzashaikh2001.ecoexplorer.api.model.WaterData;
 
 public interface WaterRepository extends CrudRepository<WaterData, String> {
 	List<WaterData> findByZipCode(String zipCode);
+	List<WaterData> findByShortenedZipCode(String shortenedZipCode);
 }
