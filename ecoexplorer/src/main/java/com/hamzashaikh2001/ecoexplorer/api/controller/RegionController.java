@@ -24,6 +24,7 @@ public class RegionController {
 	
 	@GetMapping("/api/regiondata/zips/{zipCode}")
 	public RegionData getRegionData(@PathVariable String zipCode) {
+		// Add HTTP status codes to controller classes
 		return this.regionService.getRegionData(zipCode);
 	}
 }

@@ -27,7 +27,7 @@ public class WaterData {
 			String countiesServed, String citiesServed, String popServed, String numOfFacilities,
 			String numOfViolations, String numOfSiteVisits, String submissionYear) {
 		this.zipCode = zipCode;
-		if (zipCode.length() >= 5) {
+		if (zipCode.length() > 5) {
 			this.shortenedZipCode = zipCode.substring(0, 5);
 		}
 		else {

@@ -46,8 +46,6 @@ public class WaterService {
 	}
 	
 	public List<WaterData> getWaterDataByZipCode(String zipCode) {
-		// Maybe return null if empty
-		// Also add http status codes to controller classes
 		List<WaterData> result;
 		if (zipCode.length() <= 5) {
 			result = this.waterRepository.findByShortenedZipCode(zipCode);

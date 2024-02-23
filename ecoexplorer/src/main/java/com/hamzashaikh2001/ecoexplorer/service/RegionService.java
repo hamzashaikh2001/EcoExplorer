@@ -45,6 +45,9 @@ public class RegionService {
 	}
 	
 	public RegionData getRegionData(String zipCode) {
+		if (zipCode.length() > 5) {
+			zipCode = zipCode.substring(0, 5);
+		}
 		Optional<RegionData> regionData = this.regionRepository.findById(zipCode);
 		if(regionData.isPresent()) {
 			return (RegionData) regionData.get();
