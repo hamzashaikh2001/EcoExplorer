@@ -53,10 +53,13 @@ Both 5 and 9-digit zips are accepted. 9-digit zips should be put in as XXXXX-XXX
 ## Datasets
 
 - **Water Quality Data:**
+
   [EPA Water Quality Data](https://sdwis.epa.gov/ords/sfdw_pub/r/sfdw/sdwis_fed_reports_public/200)
 
 - **Air Quality Data:**
+
   [SEDAC Air Quality Data](https://sedac.ciesin.columbia.edu/data/set/aqdh-pm2-5-o3-no2-concentrations-zipcode-contiguous-us-2000-2016/data-download)
 
 - **Zip Data:**
+
   [US Zip Code Database](https://www.unitedstateszipcodes.org/zip-code-database/)
