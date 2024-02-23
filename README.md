@@ -2,7 +2,7 @@
 
 An API for exploring ecological data of different regions in the United States.
 
-## How To Use
+## Getting Started
 
 1. Run the program and open [http://localhost:8080/](http://localhost:8080/).
 
@@ -36,7 +36,7 @@ An API for exploring ecological data of different regions in the United States.
    http://localhost:8080/api/waterdata/pwsids/{pwsID}
    ```
 
-## Example
+## Examples
 
 Both 5 and 9-digit zips are accepted. 9-digit zips should be put in as XXXXX-XXXX.
 
