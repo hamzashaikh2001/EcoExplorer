@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  database:
+    image: postgres
+    ports:
+      - 15432:5432
+    restart: always
+    environment:
+      - POSTGRES_USER=ecoexplorer
+      - POSTGRES_DB=ecoexplorer
+      - POSTGRES_PASSWORD=password
